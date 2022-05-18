@@ -7,6 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 // For math equations
 const math = require('remark-math');
 const katex = require('rehype-katex');
+const oembed = require('remark-oembed');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -40,7 +41,7 @@ const config = {
         path: 'tutorials',
         routeBasePath: 'tutorials',
         sidebarPath: require.resolve('./sidebars.js'),
-        remarkPlugins: [math],
+        remarkPlugins: [math, oembed],
         rehypePlugins: [katex],
       }
     ],
