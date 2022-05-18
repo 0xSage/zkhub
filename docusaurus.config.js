@@ -27,12 +27,38 @@ const config = {
     locales: ['en'],
   },
 
+  plugins: [
+    [
+      // This configures /tutorials directory
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'tutorials',
+        path: 'tutorials',
+        routeBasePath: 'tutorials',
+        sidebarPath: require.resolve('./sidebars.js'),
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'courses',
+        path: 'courses',
+        routeBasePath: 'courses',
+        sidebarPath: require.resolve('./sidebars.js'),
+      },
+    ]
+  ],
+
   presets: [
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: 'docs',
+          path: 'docs',
+          lastVersion: 'current',
+          onlyIncludeVersions: ['current'],
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -67,7 +93,17 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Concepts',
+          },
+          {
+            to: '/courses/intro',
+            label: 'Courses',
+            position: 'left',
+          },
+          {
+            to: '/tutorials/intro',
+            label: 'Tutorials',
+            position: 'left',
           },
           { to: '/blog', label: 'Blog', position: 'left' },
           {

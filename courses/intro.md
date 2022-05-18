@@ -1,9 +1,10 @@
 ---
 id: intro
+title: Courses
 sidebar_position: 1
 ---
 
-# Docs Intro
+# Workshops
 
 Let's discover **Docusaurus in less than 5 minutes**.
 
