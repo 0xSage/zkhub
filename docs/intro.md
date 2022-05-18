@@ -5,6 +5,10 @@ sidebar_position: 1
 
 # Docs Intro
 
+$$
+I = \int_0^{2\pi} \cos(x)\,dx
+$$
+
 Let's discover **Docusaurus in less than 5 minutes**.
 
 ## Getting Started
