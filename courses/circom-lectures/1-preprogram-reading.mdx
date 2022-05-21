@@ -1,0 +1,58 @@
+---
+id: preprogram-reading
+title: Pre-Program Reading
+sidebar_position: 1
+---
+
+To ensure that we can hit the ground running, we have a handful of readings and tutorials for you to check out over the weekend. If you want to dig deeper, feel free to check out the pre-program [topic sampler](https://learn.0xparc.org/materials/prereq-materials/topic-sampler).
+
+# Introduction to Zero-Knowledge
+
+If you aren't already familiar with zero-knowledge proofs conceptually, take a look at some of the articles below, and try out the interactive demo applet. 
+
+### Readings
+
+[Understanding ZKPs Through Illustrated Examples](https://blog.goodaudience.com/understanding-zero-knowledge-proofs-through-simple-examples-df673f796d99)
+
+[ZKPs for Engineers: Introduction](https://blog.zkga.me/intro-to-zksnarks) (read sections "What are ZKPs" and "What are SNARKs")
+
+[Optional] [Zero Knowledge Proofs: An Illustrated Primer](https://blog.cryptographyengineering.com/2014/11/27/zero-knowledge-proofs-illustrated-primer/) (section with hat example is good)
+
+[Optional] [Privacy in Cryptocurrencies: An Overview](https://medium.com/@yi.sun/privacy-in-cryptocurrencies-d4b268157f6c) - only briefly touches on ZKPs, but helpful context for why blockchains care about this kind of privacy tech
+
+### Quests
+
+Play with this [Interactive ZK 3-coloring demo](http://web.mit.edu/~ezyang/Public/graph/svg.html) (after reading the "illustrated primer" reading). Try to answer Exercises 1 and 2 at the bottom of the page.
+
+# Introduction to Ethereum
+
+One reason that zkSNARKs are exciting is because they enable a new class of decentralized applications—applications which are able to maintain a meaningful notion of *private state*. This is traditionally difficult on decentralized systems because many of these systems, by design, have completely open and transparent data layers.
+
+Some examples of decentralized applications that are made possible by zkSNARKs include marketplaces for encrypted data, "mixer" smart contracts that allow for anonymous cryptocurrency transfers, and message boards that allow for anonymous but reputation-proving message signatures.
+
+In this program, we'll generally focus on zkSNARK applications on the Ethereum smart contract platform (though the same concepts are applicable to applications built on top of any "programmable blockchain"). If you aren't familiar with Ethereum, we highly recommend that you go through the tutorial and article series below (takes about 2-3hr).
+
+- [Introduction to Ethereum](https://paper.dropbox.com/doc/1.0-Table-of-Contents--BW7Z3QnnRSwhIcaGkjXOFOnMAg-1LaqIrT2VSw2Xv9wKNexD)
+
+# Development Environment
+
+- Make sure that you have [node.js](https://nodejs.org/en/) version 14 or above installed on your system. [Node version manager](https://github.com/nvm-sh/nvm) is a helpful tool that allows you to install and manage different node versions.
+- Most of our materials and sample repos use circom 1.0, but a new release of circom (2.0) was recently published. If you wish to use circom 2.0 in your projects, you'll want [Rust](https://rustup.rs/) available on your system.
+- If you have extra time, you may also be interested in playing around with Ethereum smart contracts, which are written in Solidity. Check out Austin Griffith's [scaffold-eth](https://docs.scaffoldeth.io/scaffold-eth/) resources.
+- If you’d like to get a head start, play around with some circuits with [ZKREPL](https://zkrepl.dev/), or clone [circom-starter](https://github.com/0xPARC/circom-starter) and try running the commands in the README.
+
+# [Optional] Read About ZK Applications
+
+If you have extra time and are curious to read about applications of zkSNARKs that currently exist in production, check out some of the articles below. We'll have an "overview of ZK Apps" session in our first week as well.
+
+[ZK Rollup: Making Scalable Blockchains Possible](https://medium.com/ppio/zk-rollup-making-scalable-blockchains-possible-7308b695d929#:~:text=The%20essence%20of%20a%20ZK,the%20off%2Dchain%20state%20transition.)
+
+[Loopring Lauches zkRollup Exchange](https://medium.com/loopring-protocol/loopring-launches-zkrollup-exchange-loopring-io-d6a85beeed21)
+
+[Introducing Private Transactions on Ethereum Now](https://tornado-cash.medium.com/introducing-private-transactions-on-ethereum-now-69fb059a14a1)
+
+[To Mixers and Beyond: presenting Semaphore, a privacy gadget built on Ethereum](https://medium.com/coinmonks/to-mixers-and-beyond-presenting-semaphore-a-privacy-gadget-built-on-ethereum-4c8b00857c9b)
+
+[Announcing Dark Forest](https://blog.zkga.me/announcing-darkforest) ([talk](https://www.youtube.com/watch?v=ZUkEucDp5J0) video)
+
+[Six ZK Moonshots](https://gubsheep.substack.com/p/six-moonshot-zk-applications)

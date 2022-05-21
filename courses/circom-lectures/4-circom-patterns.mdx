@@ -1,0 +1,36 @@
+---
+id: circom-patterns
+title: Basic Circuit Patterns
+sidebar_position: 4
+---
+
+<iframe
+  src="https://www.youtube.com/embed/SJKBQ0krciw"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+## Description
+
+The second circom workshop: we dig deeper into a few key circuits such as zk-group-sig, isZero, and Num2Bits.
+
+## Pre-Session Reading/Setup
+
+Circom workshop #1 would be helpful as they build on each other.
+
+## Slides Link(s)
+
+https://docs.google.com/presentation/d/19W-83wA6EpZ1Ey7yaxY_2XHDlh_RhFMdg1CIKzsKo3A/edit#slide=id.p
+
+## Optional Homework
+
+To check your understanding, we'd recommend trying to implement any of IsZero, IsEqual, Num2Bits, GreaterThan, QuinSelector, RangeProof, IsNegative, or Modulo by hand without just copy-pasting code from circomlib or references.
+
+- IsZero, IsEqual, Num2Bits, GreaterThan can be found in circomlib (comparators and bitify), and do what you'd expect them to do.
+- QuinSelector is a circuit that takes as input an array in[nElements], an index `index`, and outputs the value of in[index].
+- RangeProof is a circuit that takes in `upper` `lower` and `test`, outputs 1 if test is in the range and 0 otherwise.
+- IsNegative is a circuit that takes in an input, outputs 1 if input is negative and 0 otherwise. We define a convention: "Negative" is by convention considered to be any residue in (p/2, p-1], and Positive is anything in [1, p/2)
+- Modulo (hard) takes in a dividend and divisor, and outputs a quotient and remainder. it is acceptable to first range proof your dividend and divisor to be at most some large number (say 1e12), and assume that everything is positive.
+- QuinSelector, RangeProof, IsNegative, and Modulo can be found in the dark forest circuits repo [https://github.com/darkforest-eth/circuits/tree/master/perlin](https://github.com/darkforest-eth/circuits/tree/master/perlin)
