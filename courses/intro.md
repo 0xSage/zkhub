@@ -4,46 +4,29 @@ title: Courses
 sidebar_position: 1
 ---
 
-# Workshops
+# Courses
+0xPARC runs **applied ZK learning groups** for researchers and developers interested in learning about zero-knowledge cryptography and its applications.
 
-Let's discover **Docusaurus in less than 5 minutes**.
+The purpose of this course is to help you learn to build with ZK crypto. This program is meant to be something in between "class about applied crypto", "talk series", and "reading and building with ZK crypto in a self-driven way with guidance."
 
-## Getting Started
+This page is a collection of readings, speaker recordings, and exercises from previous cohorts you can follow anytime.
 
-Get started by **creating a new site**.
+Contact: For questions on upcoming cohorts, email hello@0xPARC.org.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+## Topics Covered
 
-### What you'll need
+The core focus is in using the circom / snarkjs toolstack to build ZK crypto applications. We expect that many of these may be decentralized applications, and may therefore require participants to learn the basics of Solidity as well. Subtopics include:
 
-- [Node.js](https://nodejs.org/en/download/) version 14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+The circom programming language.
+- Analysis and breakdown of common ZK circuits or components--comparators, bit operations, SNARK-friendly hash functions, selectors, quantization, and more.
+- Analysis and breakdown of known ZK constructions and apps--such as Dark Forest, StealthDrop, EthDataMarketplace, tornado.cash, Semaphore, MACI.
+- Developer tools--hardhat-circom, ZK-REPL and more.
 
-## Generate a new site
+The course aims to give participants a wider understanding of the space, beyond just application development. Adjacent or auxiliary topics may include:
 
-Generate a new Docusaurus site using the **classic template**.
+- Trusted setup theory, tooling, and infrastructure.
+- The different zkSNARK protocols used in production, and the tradeoffs between them.
+- zkSNARKs and cryptography under the hood: the theory/math that makes zkSNARKs possible.
+- Other zkSNARK toolstacks.
 
-The classic template will automatically be added to your project after you run the command:
 
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
