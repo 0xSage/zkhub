@@ -1,3 +1,23 @@
+@import url("https://fast.fonts.net/lt/1.css?apiType=css&c=a6bed99d-b6fa-4ac3-8fb2-40e3f97302ae&fontids=1491978,1491986,1491988");
+
+@font-face {
+  font-family: "Neue Haas Unica W01 Light";
+  src: url("../fonts/1491978/e5716290-d41e-4c97-a27c-7a20a46ddf45.woff2") format("woff2"),
+    url("../fonts/1491978/b681571f-aab2-4935-a99c-6ee1063ce638.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Neue Haas Unica W01 Medium It";
+  src: url("../fonts/1491986/2418a824-3af2-42d7-a62e-f7a77cf487d1.woff2") format("woff2"),
+    url("../fonts/1491986/86b76db5-9343-473a-a106-60683cec7626.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Neue Haas Unica W01 Regular";
+  src: url("../fonts/1491988/e0d80810-f7e3-4fea-8c57-ef8116f0465d.woff2") format("woff2"),
+    url("../fonts/1491988/27645c8a-608b-4abf-a2f1-c4407b576723.woff") format("woff");
+}
+
 /**
  * Any CSS included here will be global. The classic template
  * bundles Infima by default. Infima is a CSS framework designed to
@@ -6,7 +26,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
+  --ifm-color-primary: rgb(0, 174, 239);
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
   --ifm-color-primary-darkest: #205d3b;
@@ -14,11 +34,10 @@
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+html[data-theme="dark"] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -26,5 +45,43 @@
   --ifm-color-primary-light: #29d5b0;
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+html[data-theme="dark"] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+body {
+  font-family: "Neue Haas Unica W01 Regular";
+}
+
+p {
+  font-family: "Neue Haas Unica W01 Regular";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: Neue Haas Unica W01 Light;
+}
+
+.footer,
+.navbar,
+
+aside .sidebar_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocSidebar-styles-module {
+  padding-top: 10;
+}
+
+iframe[title="YouTube video player"] {
+  aspect-ratio: 16 / 9;
+  width: 100%;
 }

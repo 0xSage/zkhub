@@ -127,7 +127,7 @@ const config = {
             label: 'Tutorials',
             position: 'left',
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
+          { to: '/blog', label: 'Hitchhiker\'s Guide', position: 'left' },
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
@@ -142,8 +142,16 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Concepts',
                 to: '/docs/intro',
+              },
+              {
+                label: 'Courses',
+                to: '/courses/intro',
+              },
+              {
+                label: 'Tutorials',
+                to: '/tutorials/intro',
               },
             ],
           },
@@ -169,7 +177,7 @@ const config = {
             items: [
               {
                 label: 'Blog',
-                to: '/blog',
+                href: 'https://0xparc.org/blog',
               },
               {
                 label: 'GitHub',
@@ -178,7 +186,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
