@@ -4,3 +4,54 @@ title: ECDSA
 ---
 
 # Elliptic Curve Digital Signature Algorithm
+
+## Overview
+ECDSA is a public key cryptography encryption algorithms used by popular blockchains like Ethereum and Bitcoin. It has enabled large public-key identity registries, putting the building blocks for user-controlled digital identity in the hands of millions of people. Anyone can create a public/private key pair, hold digital assets, and participate in a wide ecosystem of decentralized applications using tools for signing and authentication.
+
+Within the context of ZK, supporting ECDSA within circuits allows users to attest to on chain facts, in a privacy preserving way. Users can now prove and compose arbitrary claims about knowledge of private keys, membership in groups, possession of attestations, and more, e.g. *I can prove I own a wallet with over X in funds, without doxing my address*.
+
+## Technical Brief
+Given a ECDSA keypair of: 
+- Private key: $k_{priv}$
+- Public key: $k_{pub}$, from ${\displaystyle k_{pub}=k_{priv}\times G}$
+
+Over an appropriate $({\textrm {CURVE}},G,n)$ where $G$ is a generator point on the curve, and $n$ is the multipliative order of the point G. 
+### Signature Generation
+A message $m$ is signed as follows: 
+1. ${\displaystyle h={\textrm {HASH}}(m)}$. See [hashes](/docs/primitives/hashes)
+2. Calculate a point: $(x_{1},y_{1})=k\times G$ where $k$ is a random number in ${\displaystyle [1,n-1]}$
+3. Calculate $r=x_{1}\,{\bmod {\,}}n$
+4. Calculate ${\displaystyle s=k^{-1}(z+rk_{priv})\,{\bmod {\,}}n}$, where $z$ is the leftmost bits of $h$ up to the bitlength of the group order $n$
+
+$(r,s)$ is the resulting signature
+
+### Signature Verification
+1. Check that $k_{pub}$ is a valid point on $\textrm {CURVE}$
+2. Check ${\displaystyle h={\textrm {HASH}}(m)}$
+3. Calculate ${\displaystyle u_{1}=zs^{-1}\,{\bmod {\,}}n}$ and ${\displaystyle u_{2}=rs^{-1}\,{\bmod {\,}}n}$.
+4. Calculate a point ${\displaystyle (x_{1},y_{1})=u_{1}\times G+u_{2}\times k_{pub}}$. 
+5. Check ${\displaystyle (x_{1},y_{1})!=O}$
+5. Check ${\displaystyle r\equiv x_{1}{\pmod {n}}}$
+
+## Implementations
+
+| Name  | About | Link | Language / Platform |
+| ------------- | ------------- | ------------- | ------------- |
+| Circom-ECDSA  | Implements Ethereum's key-generation and digital signature algorithms inside of a zkSNARK. |https://github.com/0xPARC/circom-ecdsa  | Circom |
+
+## Applications
+
+| Name  | About | Link | Language / Platform |
+| ------------- | ------------- | ------------- | ------------- |
+| [cabal.xyz](cabal.xyz)  |  A Discord bot that creates credibly pseudonymous channels based on members' Ethereum activity.  | [Github](https://github.com/0xPARC/cabal)  | Circom |
+| [zkmessage.xyz](https://zkmessage.xyz/) | A message board based on an anonymous group signature scheme | [Github](https://github.com/0xPARC/zkmessage.xyz) | Circom |
+
+
+## Related Readings
+- [0xParc circom-ecdsa project summary](https://0xparc.org/blog/zk-ecdsa-1): with links to more details, benchmarks, etc.
+- [Technical overview of CIRCOM ECDSA circuits](https://hackmd.io/GhLKevH0T82TDRrlHCVy-g)
+- [ECC operations optimization plan](https://hackmd.io/M6U22g37SfCZZO5PGPpMwg), which lays out a set of optimizations we are implementing to further improve secp256k1 operations. some are curve-specific, others are generic to all curves.
+- [0xParc blog on ZK Identity](https://0xparc.org/blog/zk-id-1): the first in a series of posts contextualizing this project.
+
+## Research
+- [Whitepaper: The Elliptic Curve Digital Signature Algorithm](https://www.cs.miami.edu/home/burt/learning/Csc609.142/ecdsa-cert.pdf)
